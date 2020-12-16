@@ -14,7 +14,7 @@ class TestAllDays(unittest.TestCase):
                 print("File {} doesn't exist".format(sample_out))
                 return False
 
-            cmd = "python3 {} < {}".format(file, sample_in)
+            cmd = "python3 {} --sample < {}".format(file, sample_in)
             out1 = [l.strip() for l in subprocess.getoutput(cmd).split('\n')]
             with open(sample_out) as f:
                 out2 = [l.strip() for l in f.readlines()]
