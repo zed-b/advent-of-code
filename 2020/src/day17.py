@@ -1,13 +1,13 @@
 import sys
 
 def solve1(grid, cycles):
-    pad = cycles + 3
+    pad = cycles
     R,C  = len(grid) + pad * 2, len(grid[0]) + pad * 2
     H = pad * 2 + 1
     g = [[['.' for _ in range(H)] for _ in range(C)] for _ in range(R)]
     for r in range(len(grid)):
         for c in range(len(grid[0])):
-            g[pad + r][pad + c][H//2 + 1] = grid[r][c]
+            g[pad + r][pad + c][pad] = grid[r][c]
 
     total = 0
     for _ in range(cycles):
@@ -41,14 +41,14 @@ def solve1(grid, cycles):
     return total
 
 def solve2(grid, cycles):
-    pad = cycles + 3
+    pad = cycles
     R,C  = len(grid) + pad * 2, len(grid[0]) + pad * 2
     H = pad * 2 + 1
     D = pad * 2 + 1
     g = [[[['.' for _ in range(D)] for _ in range(H)] for _ in range(C)] for _ in range(R)]
     for r in range(len(grid)):
         for c in range(len(grid[0])):
-            g[pad + r][pad + c][H//2 + 1][D//2 + 1] = grid[r][c]
+            g[pad + r][pad + c][pad][pad] = grid[r][c]
 
     total = 0
     for _ in range(cycles):
