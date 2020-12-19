@@ -22,7 +22,7 @@ def solve2(nums, need):
 if __name__ == "__main__":
     nums = [int(l.rstrip()) for l in sys.stdin]
     # take care if sample or not
-    D = 5 if len(nums) < 25 else 25
+    D = 5 if '--sample' in sys.argv else 25
     ans = solve1(nums, D)
     print(ans)
     print(solve2(nums, ans))

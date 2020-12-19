@@ -25,7 +25,8 @@ def solve1(nums):
 
 def solve2(nums):
     # smaller n for sample check
-    return solve(nums, 300000 if len(nums) < 4 else 30000000)
+    N = 300000 if '--sample' in sys.argv else 30000000
+    return solve(nums, N)
 
 if __name__ == "__main__":
     nums = list(map(int, [l for l in sys.stdin][0].split(',')))

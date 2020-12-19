@@ -89,7 +89,7 @@ def solve2(grid, cycles):
 
 if __name__ == "__main__":
     grid = [l.rstrip() for l in sys.stdin]
-    # faster testing locally
-    cycles = 2 if len(grid) < 4 else 6
+    # faster testing for sample
+    cycles = 2 if '--sample' in sys.argv else 6
     print(solve1(grid, cycles))
     print(solve2(grid, cycles))
